@@ -16,7 +16,7 @@ const images = [
 const imagesList = images.map(image => {
   const url = image.url;
   const alt = image.alt;
-  const newImage = `<li><image src=${url}, alt = ${alt}, width = 400, height = 250></li>`;
+  const newImage = `<li><image src=${url}, alt = "${alt}", width = 400, height = 250></li>`;
 
   return newImage;
 });
