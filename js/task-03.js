@@ -13,9 +13,14 @@ const images = [
   },
 ];
 
-console.log(images);
-const imgList = document.querySelector('.gallery');
+const imagesList = images.map(image => {
+  const url = image.url;
+  const alt = image.alt;
+  const newImage = `<li><image src=${url}, alt = ${alt}, width = 400, height = 250></li>`;
 
-const markup = images.map(image => `<li">${image.toString()}</li>`);
-console.log(markup);
-imgList.insertAdjacentHTML('beforeend', markup);
+  return newImage;
+});
+
+const imageGallery = document.querySelector('.gallery');
+
+imageGallery.insertAdjacentHTML('beforeend', imagesList.join(''));
